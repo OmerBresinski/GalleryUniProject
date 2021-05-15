@@ -3,9 +3,10 @@ import Text from "components/Text";
 import Button from "components/Button";
 import * as S from "./style";
 
-const Picture = ({ title, src, onClick }) => {
+const Picture = ({ id, title, src, onClick, onDelete }) => {
     const handleDeleteClick = (e) => {
         e.stopPropagation();
+        onDelete(id);
     };
 
     return (

@@ -2,11 +2,10 @@ import React from "react";
 import Text from "components/Text";
 import * as S from "./style";
 
-const Header = (props) => {
+const Header = ({ amountOfLocations }) => {
     return (
         <S.Header>
-            {/* Add amount of pics */}
-            <Text size={"48px"}>Top 5 Locations</Text>
+            <Text size={"48px"}>Top {amountOfLocations} Locations</Text>
             <S.SeperatorWrapper>
                 <S.Seperator />
             </S.SeperatorWrapper>
