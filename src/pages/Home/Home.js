@@ -42,7 +42,7 @@ const Home = () => {
         <>
             {isDialogOpen && <Dialog onCloseClick={handleCloseClick} onSubmit={handleCreate} />}
             <S.BaseApp>
-                <Header amountOfLocations={locations?.length || 0} />
+                <Header text={`Top ${locations?.length || 0} Locations`} />
                 <Actions onNewClick={handleNewClick} />
                 <Gallery photos={locations} onDelete={handleDelete} />
             </S.BaseApp>

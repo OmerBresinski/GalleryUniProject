@@ -8,3 +8,20 @@ export const BaseLocation = styled.div`
     padding: 75px 200px 20px;
     box-sizing: border-box;
 `;
+
+export const Image = styled.img`
+    margin-block-start: 20px;
+    width: 100%;
+    height: auto;
+`;
+
+export const Description = styled.div`
+    margin-block-start: 20px;
+`;
+
+export const BackButton = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-block-start: 30px;
+`;
