@@ -14,6 +14,7 @@ export const Picture = styled.div`
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
+    overflow: hidden;
     &:hover ${ButtonLayer} {
         display: block;
     }
@@ -22,4 +23,8 @@ export const Picture = styled.div`
 export const Image = styled.img`
     width: 400px;
     height: 238px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.3);
+    }
 `;

@@ -25,8 +25,8 @@ const Home = () => {
     };
 
     const handleCreate = async ({ title, imgSrc, description }) => {
-        setLocations((locations) => [...locations, { title, imgSrc, description }]);
-        api.addLocation({ title, imgSrc, description });
+        const { _id } = await api.addLocation({ title, imgSrc, description });
+        setLocations((locations) => [...locations, { title, imgSrc, description, _id }]);
         setIsDialogOpen(false);
     };
 

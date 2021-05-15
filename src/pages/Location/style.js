@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const BaseLocation = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100vw;
     height: 100vh;
     padding: 75px 200px 20px;
@@ -11,12 +12,13 @@ export const BaseLocation = styled.div`
 
 export const Image = styled.img`
     margin-block-start: 20px;
-    width: 100%;
+    width: 90%;
     height: auto;
 `;
 
 export const Description = styled.div`
     margin-block-start: 20px;
+    width: 90%;
 `;
 
 export const BackButton = styled.div`

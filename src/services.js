@@ -16,6 +16,6 @@ export const deleteLocation = async (id) => {
 };
 
 export const addLocation = async ({ title, imgSrc, description }) => {
-    await axios.post("http://localhost:4000/locations/", { title, imgSrc, description });
-    return true;
+    const response = await axios.post("http://localhost:4000/locations/", { title, imgSrc, description });
+    return response.data;
 };
