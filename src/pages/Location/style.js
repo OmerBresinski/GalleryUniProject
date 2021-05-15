@@ -12,13 +12,13 @@ export const BaseLocation = styled.div`
 
 export const Image = styled.img`
     margin-block-start: 20px;
-    width: 90%;
+    width: 65%;
     height: auto;
 `;
 
 export const Description = styled.div`
     margin-block-start: 20px;
-    width: 90%;
+    width: 65%;
 `;
 
 export const BackButton = styled.div`
