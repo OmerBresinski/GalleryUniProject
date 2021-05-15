@@ -3,7 +3,7 @@ import Text from "components/Text";
 import AddLocationForm from "components/AddLocationForm";
 import * as S from "./style";
 
-const Dialog = (props) => {
+const Dialog = ({ onCloseClick, onSubmit }) => {
     return (
         <S.Dialog>
             <S.DialogOverlayBase>
@@ -12,7 +12,7 @@ const Dialog = (props) => {
                         <Text size={"24px"}>Add New Location</Text>
                     </S.DialogHeader>
                     <S.DialogContent>
-                        <AddLocationForm />
+                        <AddLocationForm onCloseClick={onCloseClick} onSubmit={onSubmit} />
                     </S.DialogContent>
                 </S.DialogOverlay>
             </S.DialogOverlayBase>

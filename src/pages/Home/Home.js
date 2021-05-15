@@ -6,7 +6,8 @@ import Dialog from "components/Dialog";
 import * as api from "services";
 import * as S from "./style";
 
-const App = () => {
+const Home = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [locations, setLocations] = useState([]);
 
     useEffect(() => {
@@ -23,16 +24,30 @@ const App = () => {
         api.deleteLocation(id);
     };
 
+    const handleCreate = async ({ title, imgSrc, description }) => {
+        setLocations((locations) => [...locations, { title, imgSrc, description }]);
+        api.addLocation({ title, imgSrc, description });
+        setIsDialogOpen(false);
+    };
+
+    const handleNewClick = () => {
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseClick = () => {
+        setIsDialogOpen(false);
+    };
+
     return (
         <>
-            <Dialog />
+            {isDialogOpen && <Dialog onCloseClick={handleCloseClick} onSubmit={handleCreate} />}
             <S.BaseApp>
                 <Header amountOfLocations={locations?.length || 0} />
-                <Actions />
+                <Actions onNewClick={handleNewClick} />
                 <Gallery photos={locations} onDelete={handleDelete} />
             </S.BaseApp>
         </>
     );
 };
 
-export default App;
+export default Home;

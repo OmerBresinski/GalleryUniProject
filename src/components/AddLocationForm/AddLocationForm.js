@@ -5,7 +5,7 @@ import TextInput from "components/TextInput";
 import TextAreaInput from "components/TextAreaInput";
 import * as S from "./style";
 
-const AddLocationForm = (props) => {
+const AddLocationForm = ({ onCloseClick, onSubmit }) => {
     const [title, setTitle] = useState("");
     const [imgSrc, setImgSrc] = useState("");
     const [description, setDescription] = useState("");
@@ -20,6 +20,10 @@ const AddLocationForm = (props) => {
 
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
+    };
+
+    const handleSubmit = () => {
+        onSubmit({ title, imgSrc, description });
     };
 
     return (
@@ -37,8 +41,8 @@ const AddLocationForm = (props) => {
                 <TextAreaInput onChange={handleDescriptionChange} value={description} />
             </S.InputAndLabel>
             <S.ButtonWrapper>
-                <Button label={"Cancel"} color={"LightGray"} hoverColor={"Gray"} />
-                <Button label={"Save"} color={"DarkBlue"} hoverColor={"DarkTurquoise"} />
+                <Button onClick={onCloseClick} label={"Cancel"} color={"LightGray"} hoverColor={"Gray"} />
+                <Button onClick={handleSubmit} label={"Save"} color={"DarkBlue"} hoverColor={"DarkTurquoise"} />
             </S.ButtonWrapper>
         </S.AddLocationForm>
     );

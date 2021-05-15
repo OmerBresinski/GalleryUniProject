@@ -19,4 +19,7 @@ export const Picture = styled.div`
     }
 `;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+    width: 400px;
+    height: 238px;
+`;
